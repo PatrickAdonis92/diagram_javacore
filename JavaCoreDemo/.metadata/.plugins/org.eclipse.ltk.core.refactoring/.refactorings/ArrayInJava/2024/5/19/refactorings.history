@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;CreatAndShowArray.java&apos; to &apos;SearchAlgorithm/src/array.sort.core&apos;&#x0A;- Original project: &apos;ArrayInJava&apos;&#x0A;- Destination element: &apos;SearchAlgorithm/src/array.sort.core&apos;&#x0A;- Original element: &apos;array.core.CreatAndShowArray.java&apos;" description="Copy compilation unit" destination="=SearchAlgorithm/src&lt;array.sort.core" element1="/src&lt;array.core{CreatAndShowArray.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1715251469153" units="1" version="1.0"/>
+</session>

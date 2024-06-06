@@ -1,0 +1,34 @@
+/**
+ * App.java
+ * 29-05-2024
+ */
+
+import java.util.Scanner;
+
+/**
+ * 
+ *
+ * @author: Nguyễn Hoàn
+ */
+public class App {
+
+	public static Scanner scan = new Scanner(System.in);
+	public static void main(String[] args) {
+		Company com = new Company();
+		com.creatData();
+		com.chiDinhTruongPhong(scan);
+		com.phanBoNhanSu(scan);
+	}
+	
+	private static void doMenu() {
+		boolean flag = true;
+		do {
+			int chose = Integer.parseInt(scan.nextLine());
+			inMenu();
+		} while(flag);
+	}
+	
+	private static void inMenu() {
+		
+	}
+}

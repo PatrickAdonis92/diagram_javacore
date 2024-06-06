@@ -1,0 +1,76 @@
+/**
+ * ListDepartment.java
+ * 29-05-2024
+ */
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+/**
+ * 
+ *
+ * @author: Nguyễn Hoàn
+ */
+public class ListDepartment {
+
+	private ArrayList<Department> listDepartment;
+
+	/**
+	 * @return the listDepartment
+	 */
+	public ArrayList<Department> getListDepartment() {
+		return listDepartment;
+	}
+
+	/**
+	 * @param listDepartment the listDepartment to set
+	 */
+	public void setListDepartment(ArrayList<Department> listDepartment) {
+		this.listDepartment = listDepartment;
+	}
+	
+	public ListDepartment() {
+		listDepartment = new ArrayList<Department>();
+	}
+	
+	public void showInformation() {
+		System.out.println("Department Infor:");
+		for(Department department : this.listDepartment) {
+			department.showInformation();
+			System.out.println();
+		}
+	}
+	
+	public boolean createData() {
+		boolean flag = false;
+		try {
+			// Đọc file theo từng dòng và tách dữ liệu được ngăn cách bởi dấu "#"
+			FileReader reader = new FileReader("src/PhongBan.txt");
+			BufferedReader bufferedReader = new BufferedReader(reader);
+			String line;
+			while ((line = bufferedReader.readLine()) != null) {
+				Department pb;
+				String[] listInfo = line.split(" # ");
+				// Tạo dữ liệu cho mỗi phòng banban
+				pb = new Department(listInfo[0], listInfo[1]);
+				// Lưu vào trong list
+				this.listDepartment.add(pb);
+			}
+			reader.close();
+			flag = true;
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return flag;
+	}
+	
+	public void inputInformation(Scanner scan) {
+		for(Department depart : this.listDepartment) {
+			depart.inputData(scan);
+			this.listDepartment.add(depart);
+		}
+	}
+}
